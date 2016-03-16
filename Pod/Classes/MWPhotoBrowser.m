@@ -621,6 +621,11 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
             [[_pagingScrollView.subviews lastObject] removeFromSuperview];
         }
         [self performLayout];
+
+        if(_enableGrid){
+            [_gridController.collectionView reloadData];
+        }
+        
         [self.view setNeedsLayout];
     }
     
